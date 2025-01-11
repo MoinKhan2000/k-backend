@@ -19,7 +19,7 @@ app.use(express.query());
 // CORS Configuration
 app.use(cors({
   credentials: true, // Allow cookies to be sent with requests
-  origin: 'http://localhost:3000', // Allow requests from this origin
+  origin: process.env.ALLOWED_ORIGIN || 'http://localhost:3000', // Allow requests from this origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers in requests
 }));
